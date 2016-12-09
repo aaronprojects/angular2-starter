@@ -1,0 +1,80 @@
+<!--Primary Navigation for Devices above 992px screen size-->
+<nav id="primary-nav">
+    <div class="nav-wrapper">
+        <a routerLink="/dashboard" class="brand-logo">
+            <img class="logo-img">
+        </a>
+
+        <a href="#" data-activates="mobile-nav" materialize="sideNav" class="button-collapse">
+            <i class="fa fa-bars"></i>
+        </a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down" *ngIf="primaryNav != undefined">
+            <li *ngFor="let item of primaryNav">
+                <!--Standard Template for logged in users-->
+                <a routerLink="{{item.link}}" *ngIf="item.link!=undefined && item.login && loginStatus()"
+                   materialize="tooltip" [materializeParams]="primaryNav" class="tooltipped"
+                   [routerLinkActive]="item.link=='/dashboard' ? 'active': 'inactive'"
+                   data-position="bottom" data-delay="50" [attr.data-tooltip]="item.name">
+                    <i class="{{item.icon}}" aria-hidden="true"></i>
+                </a>
+
+                <!--The Logout Button has an undefined link attribute-->
+                <a (click)="auth.logout()" *ngIf="item.link==undefined && item.login && loginStatus()"
+                   materialize="tooltip" [materializeParams]="primaryNav" class="tooltipped"
+                   [routerLinkActive]="item.link=='/dashboard' ? 'active': 'inactive'"
+                   data-position="bottom" data-delay="50" [attr.data-tooltip]="item.name">
+                    <i class="{{item.icon}}" aria-hidden="true"></i>
+                </a>
+
+                <!--Standard Template for logged out users-->
+                <a routerLink="{{item.link}}" *ngIf="!item.login && !loginStatus()"
+                   materialize="tooltip" [materializeParams]="primaryNav" class="tooltipped"
+                   data-position="bottom" data-delay="50" [attr.data-tooltip]="item.name">
+                    <i class="{{item.icon}}" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container" id="main-body">
+    <router-outlet></router-outlet>
+</main>
+
+
+<div class="fixed-action-btn" id="status" *ngIf="secondaryNav != undefined">
+    <a routerLink="{{item.link}}" materialize="tooltip" *ngFor="let item of secondaryNav" materialize="tooltip"
+       [materializeParams]="tooltips" class="tooltipped" data-position="right"
+       data-delay="50" [attr.data-tooltip]="item.name">
+        <i class="{{item.icon}}"></i>
+    </a>
+</div>
+
+
+<!--Mobile Navigation for devices below 992px screen size-->
+<div class="side-nav" id="mobile-nav">
+    <ul *ngIf="primaryNav != undefined">
+        <li class="heading">
+            <img class="logo-img logo">
+        </li>
+
+        <li *ngFor="let item of primaryNav">
+            <!--Standard Template for logged in users-->
+            <a routerLink="{{item.link}}" *ngIf="item.link!=undefined && item.login && loginStatus()"
+               [routerLinkActive]="item.link=='/dashboard' ? 'active': 'inactive'">
+                <i class="{{item.icon}}" aria-hidden="true"></i> {{item.name}}
+            </a>
+
+            <!--The Logout Button has an undefined link attribute-->
+            <a (click)="auth.logout()" *ngIf="item.link==undefined && item.login && loginStatus()">
+                <i class="{{item.icon}}" aria-hidden="true"></i> {{item.name}}
+            </a>
+
+            <!--Standard Template for logged out users-->
+            <a routerLink="{{item.link}}" *ngIf="!item.login && !loginStatus()">
+                <i class="{{item.icon}} fa-2x" aria-hidden="true"></i> {{item.name}}
+            </a>
+        </li>
+    </ul>
+</div>

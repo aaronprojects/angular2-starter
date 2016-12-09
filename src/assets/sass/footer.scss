@@ -1,0 +1,42 @@
+.fixed-action-btn {
+  a {
+    color: $dark;
+    font-size: 1.4em;
+    opacity: 0.5;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    &:hover {
+      color: $primary;
+      opacity: 1;
+    }
+  }
+}
+
+#status {
+  left: 24px;
+  bottom: 24px;
+  max-width: 160px;
+  a {
+    padding: 3px;
+  }
+}
+
+#alert {
+  color: $red;
+}
+
+#settings-menu {
+  .btn-large {
+    background: $primary;
+  }
+
+  a {
+    opacity: 1;
+    &:hover {
+      background-color: $light;
+    }
+  }
+}

@@ -1,0 +1,193 @@
+<section class="row">
+    <div class="col s12">
+        <article class="card">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs" materialize="tabs">
+                        <li class="tab col s6"><a href="#tab1">Tab 1</a></li>
+                        <li class="tab col s6"><a href="#tab2">Tab 2</a></li>
+                    </ul>
+                </div>
+
+                <!--Tab 1 filters out category 1 to 5-->
+                <div id="tab1" class="col s12">
+                    <div class="card-content">
+                        <span class="card-title">
+                            {{ "list.title1" | translate }}
+                        </span>
+
+                        <p>
+                            {{ "list.text1" | translate }}
+                        </p>
+
+                        <!--Searching-->
+                        <div class="row">
+                            <article class='col s12 m6 offset-m3'>
+                                <nav class='search-nav'>
+                                    <div class="nav-wrapper">
+                                        <div class="input-field">
+                                            <input [(ngModel)]="searchValTab1" type="search">
+                                            <label><i class="fa fa-search fa-2x"></i></label>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </article>
+                        </div>
+
+                        <!--Sorting and Filtering-->
+                        <div class="row">
+                            <!--Sorting-->
+                            <div class="col s12 m6">
+                                <a class="sorting"
+                                   (click)="sortingPropertyTab1 = 'title'; sortingOrderTab1 === '+' ? sortingOrderTab1 = '-' : sortingOrderTab1 = '+'">
+                                    <i class="fa" [class.fa-sort-alpha-asc]="sortingOrderTab1 === '+'"
+                                       [class.fa-sort-alpha-desc]="sortingOrderTab1 === '-'"></i> {{"list.heading" |
+                                    translate}}
+                                </a>
+
+                                <a class="sorting"
+                                   (click)="sortingPropertyTab1 = 'description'; sortingOrderTab1 === '+' ? sortingOrderTab1 = '-' : sortingOrderTab1 = '+'">
+                                    <i class="fa" [class.fa-sort-numeric-asc]="sortingOrderTab1 === '+'"
+                                       [class.fa-sort-alpha-desc]="sortingOrderTab1 === '-'"></i> {{"list.description" |
+                                    translate}}
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--Loop over Data-->
+                        <ul class="collection">
+                            <li class="collection-item avatar" *ngFor="let element of data
+                                | search : searchValTab1
+                                | orderBy : sortingPropertyTab1 : sortingOrderTab1
+                                | filter : filterKey : tab1Filter
+                                | paginate: { id: 'paginationControlTab1', itemsPerPage: 10, currentPage: p };">
+
+                                <i class="circle {{element.icon}}"></i>
+
+                                <span class="title">
+                                    {{element.title}}
+                                </span>
+                                <div class="secondary-text row">
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-archive"></i> {{"list.category" | translate}}
+                                        {{element.category}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-file"></i> {{element.attr1}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-drivers-license-o"></i> {{element.attr2}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-plane"></i> {{element.attr3}}
+                                    </div>
+                                </div>
+
+                                <p class="secondary-text">
+                                    {{element.description}}
+                                </p>
+                            </li>
+                        </ul>
+
+                        <!--Pagination Control-->
+                        <div class="row center-align">
+                            <pagination (pageChange)="p = $event" id="paginationControlTab1"></pagination>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!--Tab 2 filters out category 6 to 10-->
+                <div id="tab2" class="col s12">
+                    <div class="card-content">
+                        <span class="card-title">
+                            {{ "list.title2" | translate }}
+                        </span>
+
+                        <p>
+                            {{ "list.text2" | translate }}
+                        </p>
+
+                        <!--Searching-->
+                        <div class="row">
+                            <article class='col s12 m6 offset-m3'>
+                                <nav class='search-nav'>
+                                    <div class="nav-wrapper">
+                                        <div class="input-field">
+                                            <input [(ngModel)]="searchValTab2" type="search">
+                                            <label><i class="fa fa-search fa-2x"></i></label>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </article>
+                        </div>
+
+                        <!--Sorting and Filtering-->
+                        <div class="row">
+                            <!--Sorting-->
+                            <div class="col s12 m6">
+                                <a class="sorting"
+                                   (click)="sortingPropertyTab2 = 'title'; sortingOrderTab2 === '+' ? sortingOrderTab2 = '-' : sortingOrderTab2 = '+'">
+                                    <i class="fa" [class.fa-sort-alpha-asc]="sortingOrderTab2 === '+'"
+                                       [class.fa-sort-alpha-desc]="sortingOrderTab2 === '-'"></i> {{"list.heading" |
+                                    translate}}
+                                </a>
+
+                                <a class="sorting"
+                                   (click)="sortingPropertyTab2 = 'description'; sortingOrderTab2 === '+' ? sortingOrderTab2 = '-' : sortingOrderTab2 = '+'">
+                                    <i class="fa" [class.fa-sort-numeric-asc]="sortingOrderTab2 === '+'"
+                                       [class.fa-sort-alpha-desc]="sortingOrderTab2 === '-'"></i>
+                                    {{"list.description" |
+                                    translate}}
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--Loop over Data-->
+                        <ul class="collection">
+                            <li class="collection-item avatar" *ngFor="let element of data
+                                | search : searchValTab1
+                                | orderBy : sortingPropertyTab2 : sortingOrderTab2
+                                | filter : filterKey : tab2Filter
+                                | paginate: { id: 'paginationControlTab2', itemsPerPage: 10, currentPage: p };">
+
+                                <i class="circle {{element.icon}}"></i>
+
+                                <span class="title">
+                                    {{element.title}}
+                                </span>
+                                <div class="secondary-text row">
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-archive"></i> {{"list.category" | translate}}
+                                        {{element.category}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-file"></i> {{element.attr1}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-drivers-license-o"></i> {{element.attr2}}
+                                    </div>
+                                    <div class="col s6 m3">
+                                        <i class="fa fa-plane"></i> {{element.attr3}}
+                                    </div>
+                                </div>
+
+                                <p class="secondary-text">
+                                    {{element.description}}
+                                </p>
+                            </li>
+                        </ul>
+
+                        <!--Pagination Control-->
+                        <div class="row center-align">
+                            <pagination (pageChange)="p = $event" id="paginationControlTab2"></pagination>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+</section>

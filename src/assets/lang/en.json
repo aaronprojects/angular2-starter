@@ -1,0 +1,31 @@
+{
+    "title": "Angular 2 Starter",
+    "404": "Error 404 - Couldn't find this site",
+    "login": {
+        "title": "Login to the Service",
+        "username": "Username",
+        "password": "Password",
+        "doLogin": "Send"
+    },
+    "primary-nav": {
+        "dashboard": "Dashboard",
+        "about": "About the app",
+        "login": "Login",
+        "logout": "Logout",
+        "impressum": "About us"
+    },
+    "dashboard": {
+        "list": "ListView",
+        "materialize": "Materialize CSS",
+        "fontawesome": "Font Awesome"
+    },
+    "list": {
+        "title1": "List View Tab 1",
+        "text1": "This Tab filters Category 1 to 5 out of the data",
+        "title2": "List View Tab 2",
+        "text2": "This Tab filters Category 6 to 10 out of the data",
+        "heading": "Title",
+        "description": "Description",
+        "category": "Category"
+    }
+}

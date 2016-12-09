@@ -1,0 +1,31 @@
+{
+    "title": "Angular 2 Starter",
+    "404": "Fehlercodce 404 - Seite konnte nicht gefunden werden",
+    "login": {
+        "title": "Login zum Service",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "doLogin": "Absenden"
+    },
+    "primary-nav": {
+        "dashboard": "Startseite",
+        "about": "Über die App",
+        "login": "Am Service anmelden",
+        "logout": "Vom Service abmelden",
+        "impressum": "Über uns"
+    },
+    "dashboard": {
+        "list": "Listenansicht",
+        "materialize": "Materialize CSS",
+        "fontawesome": "Font Awesome"
+    },
+    "list": {
+        "title1": "Listenansicht Tab 1",
+        "text1": "Dieser Tab filtert Kategorie 1 bis 5 aus dem Datensatz heraus",
+        "title2": "Listenansicht Tab 2",
+        "text2": "Dieser Tab filtert Kategorie 6 bis 10 aus dem Datensatz heraus",
+        "heading": "Titel",
+        "description": "Beschreibung",
+        "category": "Kategorie"
+    }
+}

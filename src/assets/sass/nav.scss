@@ -1,0 +1,47 @@
+nav {
+  background-color: $primary;
+  ul {
+    li {
+      a {
+        font-size: 2rem;
+        color: $light;
+        &.active {
+            background-color: rgba(0,0,0,0.1);
+            color: $dark;
+        }
+      }
+    }
+  }
+}
+
+.side-nav {
+    .heading {
+        background-color: $light;
+        padding: 20px;
+        .logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.search-nav {
+    background-color: white;
+    margin-bottom: 10px;
+    .input-field label i {
+        color: $primary;
+    }
+}
+
+.secondary-content {
+    a {
+        padding: 5px;
+        color: $dark;
+        &:hover, &:focus {
+            color: $primary;
+        }
+    }
+}

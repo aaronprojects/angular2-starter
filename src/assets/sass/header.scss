@@ -1,0 +1,56 @@
+#primary-nav {
+    margin-bottom: 15px;
+    position: fixed;
+    z-index: 2;
+    .nav-wrapper {
+        background-color: $light;
+        .brand-logo {
+            padding: 5px;
+            img {
+                margin: 5px;
+                max-height: 50px;
+            }
+        }
+
+        ul {
+            margin: 0;
+            li {
+                a {
+                    position: relative;
+                    transition: background-color .3s;
+                    color: $dark; 
+                    &:hover, &:focus, &.active {
+                        background-color: $primary;
+                        color: $light; 
+                    }
+                }
+            }
+        }
+
+        .button-collapse {
+            padding: 0 15px;
+            color: $dark;
+        }
+
+        .side-nav {
+            li {
+                a {
+                    color: $dark; 
+                    &:hover, &:focus, &.active {
+                        background-color: $primary;
+                        color: $light; 
+                    }
+                }
+            }
+            
+            .header {
+                height: 150px;
+                background: $light;
+                img {
+                    max-width: 200px;
+                    margin: 10px 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card">
+            <div class="card-content row">
+
+                <span class="card-title">{{"login.title" | translate}}</span>
+
+                <div class="input-field col s12">
+                    <i class="fa fa-user prefix"></i>
+                    <input id="username" type="text" class="validate" [(ngModel)]="user.username"
+                           (keyup.enter)="login()">
+                    <label for="username">{{"login.username" | translate}}</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="fa fa-lock prefix"></i>
+                    <input id="password" type="password" class="validate" (keyup.enter)="login()"
+                           [(ngModel)]="user.password">
+                    <label for="password">{{"login.password" | translate}}</label>
+                </div>
+				
+				<div class="row center-align">
+					<div class="chip">
+						<i class="fa fa-user"></i>
+						admin
+					</div>
+					
+					<div class="chip">
+						<i class="fa fa-unlock-alt"></i>
+						1234
+					</div>
+				</div>
+            </div>
+            <div class="card-action">
+                <a (click)="login()">{{"login.doLogin" | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>

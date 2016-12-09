@@ -1,0 +1,26 @@
+<pagination-template #p="paginationApi" [id]="id" [maxSize]="maxSize" (pageChange)="pageChange.emit($event)">
+    <ul class="pagination">
+        <li class="waves-effect" [class.disabled]="p.isFirstPage()">
+            <a (click)="p.previous()" *ngIf="!p.isFirstPage()">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <a *ngIf="p.isFirstPage()">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+        </li>
+
+        <li *ngFor="let page of p.pages"
+            [class.active]="p.getCurrent() === page.value">
+            <a (click)="p.setCurrent(page.value)">{{ page.label }}</a>
+        </li>
+
+        <li class="waves-effect" [class.disabled]="p.isLastPage()">
+            <a (click)="p.next()" *ngIf="!p.isLastPage()">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+            <a *ngIf="p.isLastPage()">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</pagination-template>

@@ -1,0 +1,6 @@
+/node_modules/
+/typings/
+/dist/
+/nbproject/
+.idea/
+npm-debug.log

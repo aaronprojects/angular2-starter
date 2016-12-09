@@ -1,0 +1,234 @@
+body {
+    background: $body-bg;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-top: 90px;
+    z-index: 1;
+}
+
+.primary {
+    background-color: $primary !important;
+}
+
+.primary-dark {
+    background-color: $dark !important;
+}
+
+.dark-text {
+    color: $dark !important;
+}
+
+.aap-text {
+    color: $aaron !important;
+}
+
+.primary-light {
+    background-color: $light !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $dark;
+    letter-spacing: 2px;
+}
+
+a {
+    color: $primary;
+    cursor: pointer;
+    &:hover, &:focus {
+        color: $dark;
+    }
+}
+
+.button-collapse {
+    color: $light;
+}
+
+blockquote {
+    border-left: 5px solid $primary;
+}
+
+.hidden {
+    display: none;
+}
+
+strong {
+    color: $dark;
+}
+
+p {
+    color: $dark;
+}
+
+.secondary-text {
+    color: $dark !important;
+}
+
+.primary-text {
+    color: $dark !important;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: $primary;
+    &:hover, &:focus {
+        background-color: $light;
+    }
+    &:active {
+        background-color: $dark;
+    }
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: $primary !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid $primary !important;
+}
+/* label focus color */
+.input-field textarea:focus + label {
+    color: $primary !important;
+}
+/* label underline focus color */
+.input-field textarea:focus {
+    border-bottom: 1px solid $primary !important;
+}
+/* icon prefix focus color */
+.input-field .prefix {
+    color: $primary;
+    &.active {
+        color: $dark;
+    }
+}
+
+.dropdown-content {
+    li {
+        color: $dark;
+        span {
+            color: $dark;
+        }
+    }
+}
+
+.secondary-content {
+    color: $dark;
+    &:hover {
+        color: $primary;
+    }
+}
+
+.backwards {
+    color: $dark;
+    margin: 10px;
+}
+
+.btn-floating {
+    background-color: $primary;
+    &:hover, &:focus {
+        background-color: $light;
+        i {
+            color: $dark;
+        }
+    }
+}
+
+.modal {
+    .modal-footer {
+        .btn-flat {
+            min-width: 80px;
+            text-align: center;
+        }
+    }
+}
+
+.search-nav {
+    background-color: $light;
+    margin-bottom: 10px;
+    .input-field label i {
+        color: $primary;
+    }
+}
+
+.pagination {
+    li {
+        &.active {
+            background-color: $primary;
+        }
+    }
+}
+
+.select-wrapper input.select-dropdown {
+    color: $dark;
+}
+
+.item-avatar {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    left: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #F3FBF1;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.modal.bottom-sheet {
+    max-height: 75%;
+}
+
+.collection {
+    .collection-item.avatar {
+        i.circle {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+}
+
+.collection {
+    .collection-item.avatar {
+        .circle {
+            width: 28px;
+            height: 28px;
+        }
+    }
+}
+
+.autocomplete-content {
+    z-index: 9001;
+}
+
+.logo-img {
+    content:url($logo);
+}
+
+.progress {
+    background-color: #e0e0e0;
+    .determinate {
+        background-color: $primary;
+    }
+}
+
+.invalidLabel {
+    color: $red;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: $primary;
+    &:after {
+        background-color: $primary;
+    }
+}

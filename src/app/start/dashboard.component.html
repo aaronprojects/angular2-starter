@@ -1,0 +1,10 @@
+<section class="tile-wrapper">
+    <article class="tile tile-25" *ngFor="let item of tiles" routerLink="{{item.link}}">
+        <div class="content valign-wrapper">
+            <div class="valign">
+                <i class="center-align {{item.icon}}"></i>
+                <span class="center-align title">{{ item.name }}</span>
+            </div>
+        </div>
+    </article>
+</section>
