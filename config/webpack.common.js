@@ -22,16 +22,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                exclude: [
-                    /node_modules\/|jquery\.js$/,
-                    /node_modules\/|materialize\.js$/,
-                    /node_modules\/|platform-browser.umd\.js$/,
-                    /node_modules\/|core.umd\.js$/,
-                    /node_modules\/|common.umd\.js$/,
-                    /node_modules\/|router.umd\.js$/,
-                    /node_modules\/|forms.umd\.js$/,
-                    /node_modules\/|compiler.umd\.js$/
-                ],
+                exclude: /node_modules/,
                 loader: "babel-loader"
             }, {
                 test: /\.ts$/,
