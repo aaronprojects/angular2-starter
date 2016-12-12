@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'about',
+    selector: 'fontawesome',
     templateUrl: 'fontawesome.component.html'
 })
 export class FontAwesomeComponent {

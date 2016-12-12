@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'about',
+    selector: 'impressum',
     templateUrl: 'impressum.component.html'
 })
 export class ImpressumComponent {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'about',
+    selector: 'materialize',
     templateUrl: 'materialize.component.html'
 })
 export class MaterializeComponent {
