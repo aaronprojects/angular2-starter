@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 
 import {Http, HttpModule} from '@angular/http';
-import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate/ng2-translate';
 
 import {MaterializeDirective} from "angular2-materialize";
 import {Ng2PaginationModule} from "ng2-pagination";
